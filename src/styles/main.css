@@ -1,0 +1,67 @@
+body {
+	background: #eee;
+	color: #111;
+	font-family: 'input_mono_medium', monospace;
+	font-size: 13px;
+	padding: 30px;
+	-webkit-app-region: drag;
+}
+
+body * {
+-webkit-app-region: no-drag;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+#commander {
+	width: 500px;
+	display: block;
+	margin: 0 auto;
+	background: #ddd;
+	padding: 15px;
+}
+
+input {
+	font-family: 'input_mono_medium', monospace;
+	color: #000;
+	outline: none;
+	border: none;
+	background: #ddd;
+	width: 90%;
+	margin-left: 10px;
+}
+
+#words {
+	width: 100%;
+	margin-top: 50px;
+	padding: 0 50px;
+}
+
+th {
+	text-align: left;
+}
+
+th, td {
+	padding: 10px 0;
+}
+
+/* Typography */
+
+a {
+	color: inherit;
+}
+
+.synonym > a {
+	margin-right: 10px;
+}

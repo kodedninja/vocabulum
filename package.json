@@ -1,0 +1,20 @@
+{
+  "name": "vocabulum",
+  "version": "0.0.1",
+  "description": "A vocabulary building application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/kodedninja/vocabulum",
+  "keywords": [
+      "conlang",
+      "vocabulary",
+      "dictionary"
+  ],
+  "author": "kodedninja",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  }
+}

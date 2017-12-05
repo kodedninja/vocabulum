@@ -1,0 +1,34 @@
+{
+	"name": "konsol",
+	"words": {
+		"`i": {
+			"part_of_speech": "VERB",
+			"meanings": [
+				"to be"
+			],
+			"synonyms": []
+		},
+		"'ko": {
+			"part_of_speech": "VERB",
+			"meanings": [
+				"to write"
+			],
+			"synonyms": []
+		},
+		"leda": {
+			"part_of_speech": "NOUN",
+			"meanings": [
+				"woman",
+				"girl"
+			],
+			"synonyms": []
+		},
+		"vivo": {
+			"part_of_speech": "NOUN",
+			"meanings": [
+				"life"
+			],
+			"synonyms": []
+		}
+	}
+}
