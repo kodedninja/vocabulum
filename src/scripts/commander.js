@@ -47,7 +47,6 @@ function Commander() {
 					}
 
 					v.lang.words = sort_json(v.lang.words);
-					v.files.save();
 					v.dict.words();
 					this.input_el.value = "";
 				}
@@ -70,7 +69,6 @@ function Commander() {
 						}
 					}
 
-					v.files.save();
 					v.dict.words();
 					this.input_el.value = "";
 				}
@@ -104,7 +102,6 @@ function Commander() {
 							}
 						}
 
-						v.files.save();
 						v.dict.words();
 						this.input_el.value = "";
 					}
