@@ -15,8 +15,10 @@
       <script src="scripts/dict.js"></script>
       <script src="scripts/vocabulum.js"></script>
       <script type="text/javascript">
-          var v = new Vocabulum();
-          v.init();
+        const {dialog} = require('electron').remote;
+
+         var v = new Vocabulum();
+         v.init();
       </script>
   </body>
 </html>

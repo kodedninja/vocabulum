@@ -4,6 +4,7 @@ function Vocabulum() {
 	this.lang = null;
 	this.commander = new Commander();
 	this.dict = new Dict();
+	this.files = new Files();
 
 	this.el = document.createElement('div');
 	this.el.id = 'vocabulum';
@@ -12,7 +13,7 @@ function Vocabulum() {
 		var body = document.getElementsByTagName('body')[0];
 		body.appendChild(this.el);
 
-		this.lang = load();
+		this.lang = this.files.open();
 
 		this.commander.init();
 		this.dict.init();
