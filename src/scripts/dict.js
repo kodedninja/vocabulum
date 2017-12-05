@@ -37,7 +37,6 @@ function Dict() {
 		this.words_el.innerHTML = "";
 		this.words_el.appendChild(this.header);
 		this.word_inst = {};
-		console.log(v.lang.words)
 		for (word in v.lang.words) {
 			this.new_word(word);
 		}

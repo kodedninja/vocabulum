@@ -107,6 +107,12 @@ function Commander() {
 					}
 				}
 				break;
+			case 'SAVE':
+				v.files.save();
+				this.input_el.value = "";
+			case 'OPEN':
+				v.files.open();
+				this.input_el.value = "";
 		}
 	}
 

@@ -2,7 +2,6 @@ function Files() {
 	this.source = null;
 
 	this.save = function() {
-		console.log(this.source)
 		if (!this.source) {this.export(); return; }
 		fs.writeFileSync(this.source, JSON.stringify(v.lang, null, "\t"));
 	}
