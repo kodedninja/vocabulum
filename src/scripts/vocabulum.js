@@ -13,10 +13,18 @@ function Vocabulum() {
 		var body = document.getElementsByTagName('body')[0];
 		body.appendChild(this.el);
 
-		this.lang = this.files.open();
+		this.new();
 
 		this.commander.init();
 		this.dict.init();
+	}
+
+	this.new = function() {
+		this.lang = {
+			"words": {}
+		}
+
+		this.dict.words();
 	}
 
 	return this;

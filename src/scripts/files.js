@@ -7,15 +7,6 @@ function Files() {
 		fs.writeFileSync(this.source, JSON.stringify(v.lang, null, "\t"));
 	}
 
-	this.load = function() {
-		try {
-			var string = fs.readFileSync('./lang.json', 'utf-8');
-		} catch(e) {
-			return null;
-		}
-		return JSON.parse(string);
-	}
-
 	this.open = function() {
 		var filepath = dialog.showOpenDialog({properties: ['openFile']});
 
@@ -28,7 +19,8 @@ function Files() {
 		}
 
 		this.source = filepath[0];
-		return JSON.parse(string);
+		v.lang = JSON.parse(string);
+		v.dict.words();
 	}
 
 	this.export = function() {
@@ -38,7 +30,7 @@ function Files() {
 
 	    dialog.showSaveDialog((fileName) => {
 	    	if (fileName === undefined){ return; }
-	      	fs.writeFile(fileName+".txt", str, (err) => {
+	      	fs.writeFile(fileName, str, (err) => {
 	        	if(err){ alert("An error ocurred creating the file "+ err.message); return; }
 	        	v.files.source = fileName;
 	      	});
