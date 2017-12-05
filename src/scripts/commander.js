@@ -58,14 +58,57 @@ function Commander() {
 				break;
 			case 'DELETE':
 				// delete word
+				var word = words[1];
+
+				if (v.lang.words[word]) {
+					delete v.lang.words[word];
+
+					for (var all in v.lang.words) {
+						for (var i = 0; i < v.lang.words[all].synonyms.length; i++) {
+							var index = v.lang.words[all].synonyms.indexOf(word);
+							v.lang.words[all].synonyms.splice(index, 1);
+						}
+					}
+
+					save();
+					v.dict.words();
+					this.input_el.value = "";
+				}
 				break;
 			case 'SYNONYM':
 			case 'SYN':
 				// add synonym
-				break;
-			case 'SAVE':
-				save();
-				this.input_el.value = "";
+				if (words[2] == '+') {
+					var base = words[1];
+					var synonym = words[3];
+
+					if (v.lang.words[base] && v.lang.words[synonym]) {
+						if (v.lang.words[base].synonyms.indexOf(synonym) == -1) {
+							v.lang.words[base].synonyms.push(synonym);
+
+							for (var i = 0; i < v.lang.words[base].synonyms.length; i++) {
+								var o = v.lang.words[base].synonyms[i];
+								if (v.lang.words[o].synonyms.indexOf(synonym) == -1) {
+									v.lang.words[o].synonyms.push(synonym);
+								}
+							}
+						}
+						if (v.lang.words[synonym].synonyms.indexOf(base) == -1) {
+							v.lang.words[synonym].synonyms.push(base);
+
+							for (var i = 0; i < v.lang.words[synonym].synonyms.length; i++) {
+								var o = v.lang.words[synonym].synonyms[i];
+								if (v.lang.words[o].synonyms.indexOf(base) == -1) {
+									v.lang.words[o].synonyms.push(base);
+								}
+							}
+						}
+
+						save();
+						v.dict.words();
+						this.input_el.value = "";
+					}
+				}
 				break;
 		}
 	}
