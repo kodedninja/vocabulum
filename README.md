@@ -1,2 +1,2 @@
-# sol+
+# vocabulum
 A vocabulary building application
