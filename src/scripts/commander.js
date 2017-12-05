@@ -84,22 +84,22 @@ function Commander() {
 						if (v.lang.words[base].synonyms.indexOf(synonym) == -1) {
 							v.lang.words[base].synonyms.push(synonym);
 
-							for (var i = 0; i < v.lang.words[base].synonyms.length; i++) {
+							/*for (var i = 0; i < v.lang.words[base].synonyms.length; i++) {
 								var o = v.lang.words[base].synonyms[i];
 								if (v.lang.words[o].synonyms.indexOf(synonym) == -1) {
 									v.lang.words[o].synonyms.push(synonym);
 								}
-							}
+							}*/
 						}
 						if (v.lang.words[synonym].synonyms.indexOf(base) == -1) {
 							v.lang.words[synonym].synonyms.push(base);
 
-							for (var i = 0; i < v.lang.words[synonym].synonyms.length; i++) {
+							/*for (var i = 0; i < v.lang.words[synonym].synonyms.length; i++) {
 								var o = v.lang.words[synonym].synonyms[i];
 								if (v.lang.words[o].synonyms.indexOf(base) == -1) {
 									v.lang.words[o].synonyms.push(base);
 								}
-							}
+							}*/
 						}
 
 						v.dict.words();

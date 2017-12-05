@@ -64,4 +64,5 @@ a {
 
 .synonym > a {
 	margin-right: 10px;
+	display: block;
 }

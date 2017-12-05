@@ -5,19 +5,19 @@ document.onkeydown = function(e) {
 		return;
 	}
 
-	if(e.key == "o" && (e.ctrlKey || e.metaKey)){
+	if (e.key == "o" && (e.ctrlKey || e.metaKey)) {
     	e.preventDefault();
     	v.files.open();
     	return;
     }
 
-    if(e.key == "s" && (e.ctrlKey || e.metaKey)){
+    if(e.key == "s" && (e.ctrlKey || e.metaKey)) {
     	e.preventDefault();
     	v.files.save();
     	return;
     }
 
-	if(e.key == "S" && (e.ctrlKey || e.metaKey)){
+	if (e.key == "S" && (e.ctrlKey || e.metaKey)) {
     	e.preventDefault();
     	v.files.export();
     	return;
