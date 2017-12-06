@@ -31,3 +31,10 @@ Shows only the ```word``` or every word.
 Syntax: ```FIND [word]``` or ```FIND``` to show every word
 
 Example: ```FIND leda```
+
+#### ```LANGS```
+Set the name of the two languages you working with (the language you're working on/the base language).
+
+Syntax: ```LANGS [newlang] [baselang]```
+
+Example: ```LANGS konsol english```
