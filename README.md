@@ -1,7 +1,7 @@
 # vocabulum
 A vocabulary building application
 
-Vocabulum is built to help in constructing artificial languages.
+Vocabulum is built to help in constructing artificial languages. It also lets you work on a language with other people, by using ```git``` for the saved JSON file.
 
 ## Command
 #### ```WORD```
