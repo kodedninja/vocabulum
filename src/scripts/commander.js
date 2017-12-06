@@ -130,6 +130,14 @@ function Commander() {
 					}
 				}
 				break;
+			case 'LANGS':
+				if (words[1] && words[2]) {
+					v.lang.from = words[1];
+					v.lang.to = words[2];
+					v.render();
+					this.input_el.value = '';
+				}
+				break;
 			case 'SAVE':
 				v.files.save();
 				this.input_el.value = "";

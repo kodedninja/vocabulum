@@ -1,4 +1,6 @@
 {
+	"from": "example",
+	"to": "english",
 	"words": {
 		"'i": {
 			"part_of_speech": "VERB",

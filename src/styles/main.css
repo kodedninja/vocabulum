@@ -27,7 +27,7 @@ html {
 #commander {
 	width: 500px;
 	display: block;
-	margin: 0 auto;
+	margin: 14px auto;
 	background: #ddd;
 	padding: 15px;
 }
@@ -60,6 +60,13 @@ th, td {
 
 a {
 	color: inherit;
+}
+
+#langs {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .synonym > a {

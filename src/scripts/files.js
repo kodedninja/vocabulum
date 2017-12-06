@@ -19,7 +19,7 @@ function Files() {
 
 		this.source = filepath[0];
 		v.lang = JSON.parse(string);
-		v.dict.words();
+		v.render();
 	}
 
 	this.export = function() {
