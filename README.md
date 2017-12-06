@@ -38,3 +38,9 @@ Set the name of the two languages you working with (the language you're working 
 Syntax: ```LANGS [newlang] [baselang]```
 
 Example: ```LANGS konsol english```
+
+#### ```SAVE```
+Save the language. Same as ```Ctrl + s```.
+
+#### ```OPEN```
+Open a language file. Same as ```Ctrl + o```.
