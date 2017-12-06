@@ -30,8 +30,8 @@ function Commander() {
 			case 'WORD':
 				// new word
 				if (words[3] == '=') {
-					var pos = words[1];
-					var foreign = words[2];
+					var pos = words[1].trim().toUpperCase();
+					var foreign = words[2].trim();
 
 					var meaning = "";
 					for (var i = 4; i < words.length; i++) {
@@ -54,10 +54,33 @@ function Commander() {
 				break;
 			case 'FIND':
 				// find a word
+				if (words[1]) {
+					var word = words[1].trim();
+
+					for (var foreign in v.lang.words) {
+						if (foreign == word || v.lang.words[foreign].meanings.indexOf(word) > -1) {
+							var id = '#' + idfy(foreign);
+
+							// hide other words
+							for (var k in v.dict.word_inst) {
+								v.dict.word_inst[k].el.style.display = 'none';
+							}
+
+							v.dict.word_inst[foreign].el.style.display = 'table-row';
+
+							break;
+						}
+					}
+				} else {
+					// hide other words
+					for (var k in v.dict.word_inst) {
+						v.dict.word_inst[k].el.style.display = 'table-row';
+					}
+				}
 				break;
 			case 'DELETE':
 				// delete word
-				var word = words[1];
+				var word = words[1].trim();
 
 				if (v.lang.words[word]) {
 					delete v.lang.words[word];
@@ -77,8 +100,8 @@ function Commander() {
 			case 'SYN':
 				// add synonym
 				if (words[2] == '+') {
-					var base = words[1];
-					var synonym = words[3];
+					var base = words[1].trim();
+					var synonym = words[3].trim();
 
 					if (v.lang.words[base] && v.lang.words[synonym]) {
 						if (v.lang.words[base].synonyms.indexOf(synonym) == -1) {
@@ -122,6 +145,10 @@ function Commander() {
 			if (e.length > 0 && e != ' ') res.push(e);
 		});
 		return res;
+	}
+
+	function idfy(name) {
+		return name.replace(/\W/g,'-');
 	}
 
 	return this;
