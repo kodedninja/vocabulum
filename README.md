@@ -24,3 +24,10 @@ Adds a synonym to a word and to every other synonyms
 Syntax: ```SYN [word] + [synonym]```
 
 Example: ```SYN leda + nona```
+
+#### ```FIND```
+Shows only the ```word``` or every word.
+
+Syntax: ```FIND [word]``` or ```FIND``` to show every word
+
+Example: ```FIND leda```
