@@ -22,4 +22,29 @@ document.onkeydown = function(e) {
     	v.files.export();
     	return;
     }
+
+	if (e.keyCode == 38) {
+		e.preventDefault();
+		if (v.commander.current > 0) {
+			v.commander.current--;
+			v.commander.value(v.commander.history[v.commander.current]);
+		} else if (v.commander.current == 1) {
+			v.commander.value(v.commander.history[0]);
+		}
+		return;
+	}
+
+	if (e.keyCode == 40) {
+		e.preventDefault();
+		if (v.commander.current < v.commander.history.length - 1) {
+			v.commander.current++;
+			v.commander.value(v.commander.history[v.commander.current]);
+		}
+		return;
+	}
+
+	if (e.keyCode == 27) {
+		e.preventDefault();
+		v.commander.value('');
+	}
 }

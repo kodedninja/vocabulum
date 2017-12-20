@@ -4,6 +4,9 @@ function Commander() {
     this.input_el = document.createElement('input');
     this.input_el.value = "";
 
+	this.history = [];
+	this.current = -1;
+
 	this.init = function() {
 		var dol = document.createElement('span');
 		dol.innerHTML = '$';
@@ -48,7 +51,7 @@ function Commander() {
 
 					v.lang.words = sort_json(v.lang.words);
 					v.dict.words();
-					this.input_el.value = "";
+					this.success(com);
 				}
 
 				break;
@@ -93,7 +96,7 @@ function Commander() {
 					}
 
 					v.dict.words();
-					this.input_el.value = "";
+					this.success(com);
 				}
 				break;
 			case 'SYNONYM':
@@ -126,7 +129,7 @@ function Commander() {
 						}
 
 						v.dict.words();
-						this.input_el.value = "";
+						this.success(com);
 					}
 				}
 				break;
@@ -135,16 +138,25 @@ function Commander() {
 					v.lang.from = words[1];
 					v.lang.to = words[2];
 					v.render();
-					this.input_el.value = '';
+					this.success(com);
 				}
 				break;
 			case 'SAVE':
 				v.files.save();
-				this.input_el.value = "";
+				this.success(com);
 			case 'OPEN':
 				v.files.open();
-				this.input_el.value = "";
+				this.success(com);
 		}
+	}
+
+	this.success = function(command) {
+		this.current = this.history.push(command);
+		this.input_el.value = "";
+	}
+
+	this.value = function(v) {
+		this.input_el.value = v;
 	}
 
 	function filter(arr) {
